@@ -2,10 +2,10 @@ import "./Navbar.css";
 import { useState } from "react";
 
 const Navbar = () => {
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(0);
 
-  const handleClick = () => {
-    setIsActive(!isActive);
+  const handleClick = (id) => {
+    setIsActive(id);
   };
 
   return (
@@ -14,32 +14,32 @@ const Navbar = () => {
         <div className="logo">Agustín Marotte</div>
         <div className="nav-links">
           <a
-            href="#"
-            className={`${isActive ? "active" : ""}`}
-            onClick={handleClick}
+            href="#about-me"
+            className={`${isActive === 1 ? "active" : ""}`}
+            onClick={() => handleClick(1)}
           >
-            About Me
+            Sobre mí
           </a>
           <a
-            href="#"
-            className={`${isActive ? "active" : ""}`}
-            onClick={handleClick}
+            href="#skills"
+            className={`${isActive === 2 ? "active" : ""}`}
+            onClick={() => handleClick(2)}
           >
-            Skills
+            Habilidades
           </a>
           <a
-            href="#"
-            className={`${isActive ? "active" : ""}`}
-            onClick={handleClick}
+            href="#projects"
+            className={`${isActive === 3 ? "active" : ""}`}
+            onClick={() => handleClick(3)}
           >
-            Projects
+            Proyectos
           </a>
           <a
-            href="#"
-            className={`${isActive ? "active" : ""}`}
-            onClick={handleClick}
+            href="#contact"
+            className={`${isActive === 4 ? "active" : ""}`}
+            onClick={() => handleClick(4)}
           >
-            Contact
+            Contacto
           </a>
         </div>
       </nav>

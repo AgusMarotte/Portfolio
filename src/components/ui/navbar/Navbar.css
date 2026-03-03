@@ -1,28 +1,52 @@
 .navbar {
-  font-size: 3em;
+  font-size: 3rem;
   display: flex;
   justify-content: space-between;
   background-color: #333;
-  padding: 4rem 3rem;
+  padding: 4rem 5rem;
 }
 
 .nav-links a {
   margin-left: 4rem;
   color: white;
-  transition: all 0.5s ease;
+  transition: color 0.5s ease;
   text-decoration: none;
 }
 
 .nav-links a:hover {
-  transition: all 0.5s ease;
+  transition: color 0.5s ease;
   color: gray;
 }
-/*
-@media () {
-
-}
-*/
 
 .active {
-  color: gray;
+  background-color: #242424;
+  color: gray !important;
+  position: relative;
+  box-shadow:
+    0rem 0.5rem 0 2rem #242424,
+    0rem 2.5rem 0 2rem #242424;
+  border-radius: 0.75rem 0.75rem 0 0;
+}
+
+.active::before,
+.active::after {
+  --border-radius: 2.5rem;
+  background-color: #333;
+  content: "";
+  position: absolute;
+  width: var(--border-radius);
+  height: var(--border-radius);
+  bottom: -4rem;
+}
+
+.active::before {
+  left: calc(var(--border-radius) * -1.8);
+  border-radius: 0 0 100vw 0;
+  box-shadow: 10px 10px 0 10px #242424;
+}
+
+.active::after {
+  right: calc(var(--border-radius) * -1.8);
+  border-radius: 0 0 0 100vw;
+  box-shadow: -10px 10px 0 5px #242424;
 }
